@@ -1,4 +1,4 @@
-<h1>Crear un artículo</h1>
+<h1>Edición de Artículo</h1>
 
 <% if @article.errors.any? then%>
   <h2> Error al crear el artículo </h2>
@@ -22,5 +22,6 @@
     <%= f.submit %>
   </p>
 <% end %>
+
 
 <%= link_to "Volver", articles_path %>
