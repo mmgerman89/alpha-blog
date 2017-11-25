@@ -1,23 +1,4 @@
-<% if @article.errors.any? then%>
-  <div class="row">
-    <div class="col-xs-8 col-xs-offset-2">
-      <div class="panel panel-danger">
-        <div class="panel-heading">
-          <h2 class="panel-title">
-            <% errors = @article.errors.count.to_s + " " +  (@article.errors.count > 1 ? "errores" : "error") %>
-            <%= errors %>
-            al crear el artículo
-          </h2>
-        </div>
-        <ul>
-          <% @article.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
-          <% end %>
-        </ul>
-      </div>
-    </div>
-  </div>
-<% end %>
+<%= render 'shared/errors', obj: @article %>
 
 <div class="row">
   <div class="col-xs-12">
