@@ -4,9 +4,8 @@
       <div class="panel panel-danger">
         <div class="panel-heading">
           <h2 class="panel-title">
-            <% errors = obj.errors.count.to_s + " " +  (obj.errors.count > 1 ? "errores" : "error") %>
-            <%= errors %>
-            al crear el artículo
+            <%= pluralize(obj.errors.count, "error") %>
+            prohibited this article from being saved:
           </h2>
           <div class="panel-body">
             <ul>
