@@ -9,6 +9,13 @@
           </div>
           <div class="article-body">
             <%= truncate(article.description, length: 100) + "..." %>
+            <div class="article-meta-details">
+              <small>
+                Creado por <%= article.user.username if article.user %> hace 
+                <%= time_ago_in_words(article.created_at) %>,
+                actualizado <%= time_ago_in_words(article.updated_at) %>
+              </small>
+            </div>
           </div>
           <div class="article-actions">
             <%= link_to "Editar este artículo", edit_article_path(article), class: "btn btn-xs btn-primary" %>
